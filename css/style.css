@@ -1,0 +1,609 @@
+@font-face {
+    font-family: "latolight";
+    src: url("../fonts/lato-lig-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "latoregular";
+    src: url("../fonts/lato-reg-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background: black;
+    font-family: "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    margin: 0;
+    color: #ccc;
+}
+
+body, body *, .chrome-image-quilts, .chrome-image-quilts *, .chrome-image-quilts *:before, .chrome-image-quilts *:after {
+    -webkit-user-select: none;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.update-outer {
+    display: table;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.update-outer.show {
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.update {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.update ol li {
+    margin-bottom: 5px;
+}
+
+.update .icon {
+    display: block;
+    margin: 20px auto 20px;
+    height: 39px;
+    width: 39px;
+}
+
+.update-outer {
+    font-family: "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    background: #fffff3;
+    color: black;
+}
+
+.update h1 {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    margin: 0 20px 32px;
+    padding: 0 5px 0 0;
+    font-size: 30px;
+    font-style: italic;
+    color: red;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.update h1 .logo-text {
+    margin-right: 7px;
+}
+
+.update h1 .logo-text .i {
+    margin-right: -1px;
+}
+
+.update h1 .version {
+    font-size: 28px;
+}
+
+.update h1 .eye {
+    margin-right: -1px;
+}
+
+.update h1 .version .period {
+    margin-left: -1px;
+    margin-right: -3px;
+}
+
+.update p {
+    width: 542px;
+    font-weight: 300;
+    margin: 20px auto 0;
+    max-width: 90%;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.update .browser-action-preview {
+    height: 22px;
+    width: auto;
+    position: relative;
+    top: 4px;
+    margin-left: 2px;
+}
+
+.update .export-preview {
+    font-family: "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    background: red;
+    color: #fffff3;
+    height: auto;
+    line-height: 27px;
+    padding: 3px 13px;
+    margin: 0 7px;
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: -2px;
+    margin-bottom: -5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.update p.thanks {
+    letter-spacing: 1px;
+    color: red;
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.chrome-image-quilts .hidden {
+    visibility: hidden;
+}
+
+.chrome-image-quilts a {
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+.chrome-image-quilts .tools {
+    background: #fffff3;
+    padding: 8px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    height: 49px;
+    overflow: hidden;
+}
+
+.chrome-image-quilts .tools span, .chrome-image-quilts .tools a {
+    height: 36px;
+    font-size: 13px;
+    line-height: 42px;
+    padding: 0px 10px;
+    text-transform: uppercase;
+}
+
+.chrome-image-quilts .tools span {
+    color: #b6b6b6;
+    margin-left: 20px;
+    cursor: default;
+}
+
+.chrome-image-quilts .tools span.label {
+    width: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 10px;
+    position: relative;
+    top: -16px;
+    left: 20px;
+    width: 10px;
+    letter-spacing: .03em;
+}
+
+.chrome-image-quilts .tools span.logo {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: .05em;
+    color: red;
+    margin: 0 20px;
+    padding: 0 5px 0 0;
+    font-size: 16px;
+    position: relative;
+    top: -4px;
+    font-style: italic;
+    text-transform: none;
+}
+
+.chrome-image-quilts .tools a {
+    color: #777;
+}
+
+.chrome-image-quilts .tools input[type="range"] {
+    position: relative;
+    top: 3px;
+    width: 50px;
+    -webkit-filter: sepia(1) saturate(0.5);
+    -webkit-transform: translateZ(0); /* Retina displays need this or the -webkit-filter pixelates */
+}
+
+.chrome-image-quilts .tools a:hover {
+    color: red;
+}
+
+#load {
+    display: block;
+       margin-left: auto;
+       margin-right: auto;
+	   margin-top: 250px;
+}
+
+.chrome-image-quilts .tools a:hover:active {
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.chrome-image-quilts .tools a.export {
+    font-family: "Futura", "Gill Sans", "latoregular", "Helvetica Neue", sans-serif;
+    letter-spacing: .05em;
+    font-style: italic;
+    text-transform: none;
+    background: red;
+    color: #fffff3;
+    height: auto;
+    line-height: 27px;
+    padding: 3px 13px;
+    margin: 7px;
+    position: relative;
+    margin-top: -4px;
+    top: -6px;
+    left: 3px;
+    border-radius: 3px;
+}
+
+.flush-left {
+    margin-left: 10px
+}
+
+.flush-left i, .central-axis i {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+}
+
+.flush-left b, .central-axis b {
+    position: absolute;
+    display: block;
+    height: 1px;
+    background: #777
+}
+
+.flush-left:hover b, .central-axis:hover b {
+    background: red
+}
+
+.flush-left b:nth-child(1),
+.central-axis b:nth-child(1) {
+    top: 8px;
+    left: 0;
+    width: 10px
+}
+
+.flush-left b:nth-child(2),
+.central-axis b:nth-child(2) {
+    top: 12px;
+    left: 0;
+    width: 16px
+}
+
+.flush-left b:nth-child(3),
+.central-axis b:nth-child(3) {
+    top: 16px;
+    left: 0;
+    width: 10px
+}
+
+.flush-left b:nth-child(4),
+.central-axis b:nth-child(4) {
+    top: 20px;
+    left: 0;
+    width: 6px
+}
+
+.central-axis b:nth-child(1) { left: 3px }
+.central-axis b:nth-child(3) { left: 3px }
+.central-axis b:nth-child(4) { left: 5px }
+
+@media (max-width: 1000px) {
+    .color-mode-tool {
+        display: none !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .order-tool {
+        display: none !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .scale-tool {
+        display: none !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .flush-left, .central-axis {
+        display: none !important;
+    }
+
+    .zoom-tool {
+        display: none !important;
+    }
+
+    .chrome-image-quilts .tools a.export {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        bottom: 8px;
+        left: auto;
+        margin: 0;
+    }
+
+    .chrome-image-quilts .tools span.logo {
+        margin-left: 0;
+    }
+}
+
+.chrome-image-quilts .quilt-scroll-wrapper {
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.chrome-image-quilts .quilt-wrapper {
+    margin: 0px;
+    overflow: hidden;
+    font-size: 0;
+    width: 100%;
+    margin-top: 49px;
+}
+
+.chrome-image-quilts .quilt {
+    margin: 0px;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.chrome-image-quilts .quilt[alignment="flush-left"] {
+    text-align: left
+}
+
+.chrome-image-quilts .quilt[alignment="central-axis"] {
+    padding: 50px;
+    text-align: center
+}
+
+.chrome-image-quilts .quilt[data-grayscale="0"][data-invert="0"] .image img {
+    -webkit-filter: grayscale(0) invert(0);
+}
+
+.chrome-image-quilts .quilt[data-grayscale="0"][data-invert="1"] .image img {
+    -webkit-filter: grayscale(0) invert(1);
+}
+
+.chrome-image-quilts .quilt[data-grayscale="1"][data-invert="0"] .image img {
+    -webkit-filter: grayscale(1) invert(0);
+}
+
+.chrome-image-quilts .quilt[data-grayscale="1"][data-invert="1"] .image img {
+    -webkit-filter: grayscale(1) invert(1);
+}
+
+.chrome-image-quilts .image {
+    display: inline-block;
+    cursor: move;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: 150px;
+    -webkit-transform: translateZ(0);
+}
+
+.chrome-image-quilts .image.dragged-over {
+    z-index: 99
+}
+
+.chrome-image-quilts .image .drop-guide {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    display: none;
+    height: 100%;
+    width: 18px;
+    background: #fffff3;
+}
+
+.chrome-image-quilts .image .drop-guide:before,
+.chrome-image-quilts .image .drop-guide:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 1px;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.chrome-image-quilts .image .drop-guide:before {
+    border-top: 20px solid red;
+    top: 0;
+}
+
+.chrome-image-quilts .image .drop-guide:after {
+    border-bottom: 20px solid red;
+    bottom: 0;
+}
+
+.chrome-image-quilts .image.dragged-over .drop-guide {
+    display: block
+}
+
+.chrome-image-quilts .image.dragged-over[dragged-over-side= "left"] .drop-guide {  left: 0 }
+.chrome-image-quilts .image.dragged-over[dragged-over-side="right"] .drop-guide { right: 0 }
+
+.chrome-image-quilts .image.currently-dragging {
+    position: absolute;
+    box-shadow: 0 0 0 4px red, 0 0 16px 4px black;
+    z-index: 999
+}
+
+body.dragging-image * {
+    cursor: move !important
+}
+
+body.dragging-image .image a {
+    display: none !important
+}
+
+.chrome-image-quilts .image .close {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    opacity: 0;
+    -webkit-transition: opacity .1s;
+    font-size: 27px;
+    padding: 5px 10px 4px;
+    line-height: 27px;
+    font-family: 'latolight';
+    color: #fffff3;
+    text-transform: uppercase;
+    -webkit-transform: translateZ(0);
+    -webkit-filter: sepia(1) saturate(0.5);
+}
+
+.chrome-image-quilts .image .close:active {
+    color: #fff;
+    background: rgba(0, 0, 0, 1);
+}
+
+.chrome-image-quilts .image:hover .close {
+    opacity: 1
+}
+
+.chrome-image-quilts .image img {
+    width: auto;
+    height: 150px;
+    background: #fff;
+    -webkit-transform: scale(1) translateZ(0);
+    -webkit-transition: -webkit-filter .5s;
+}
+
+.chrome-image-quilts .image .zoom {
+    position: absolute;
+    margin: auto;
+    width: 150px;
+    max-width: 90%;
+    height: 30px;
+    background: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transition: opacity .1s;
+    overflow: hidden;
+    text-transform: uppercase;
+    -webkit-filter: sepia(1) saturate(0.5);
+    -webkit-transform: translateZ(0);
+}
+
+.chrome-image-quilts .image .zoom input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1px;
+    bottom: 0;
+    margin: auto;
+    max-width: 85%;
+}
+
+.chrome-image-quilts .image .zoom:active {
+    color: #fff;
+    background: rgba(0, 0, 0, .8);
+}
+
+.chrome-image-quilts .image:hover .zoom {
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .chrome-image-quilts .tools span, .chrome-image-quilts .tools a {
+        padding: 0px 6px;
+    }
+
+    .chrome-image-quilts .tools span.label {
+        left: 16px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .chrome-image-quilts .tools span, .chrome-image-quilts .tools a {
+        padding: 0px 4px;
+    }
+
+    .chrome-image-quilts .tools span.label {
+        left: 14px;
+    }
+}
+
+.chrome-image-quilts.capturing .tools {
+    display: none;
+}
+
+.chrome-image-quilts.capturing .quilt-wrapper {
+    margin-top: 0;
+}
+
+.chrome-image-quilts.capturing .image .close, .chrome-image-quilts.capturing .image .zoom {
+    display: none !important;
+}
+
+.drag-helper {
+    display: none;
+    pointer-events: none;
+}
+
+body.dragover .drag-helper {
+    position: fixed;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 6px solid #fffff3;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.drag-helper .message {
+    pointer-events: none;
+    color: #fffff3;
+    font-size: 28px;
+    font-family: "Gill Sans", "latolight";
+    font-weight: 300;
+    letter-spacing: .05em;
+    text-align: center;
+    width: 100%;
+}
